@@ -10,5 +10,8 @@
     "noImplicitAny": false,
 
     "outDir"  : "./build"
-  }
+  },
+  "exclude" : [
+        "src/main.js"
+  ]
 }

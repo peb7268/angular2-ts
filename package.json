@@ -5,6 +5,7 @@
     "build": "gulp",
     "start": "gulp dev",
     "test" : "clear; live-server --open=build/test-runner.html",
+    "sass" : "clear; node-sass --output-style=compressed --source-map=true -w ./src/styles -o ./build/src/styles/",
     "dev"  : "clear; tsc && tsc -w"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "gulp-webserver": "0.9.1",
     "jasmine-core": "^2.4.1",
     "live-server": "^1.0.0",
+    "node-sass": "^3.8.0",
     "typescript": "^1.8.10",
     "typings": "^1.3.0"
   }

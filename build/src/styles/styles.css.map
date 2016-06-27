@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"../../../src/styles/styles.sass",
+		"../../../src/styles/global.sass"
+	],
+	"mappings": "ACCA,AAAA,IAAI,AAAC,CACJ,UAAU,CAAE,IAAK,CAAG",
+	"names": []
+}

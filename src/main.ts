@@ -30,4 +30,4 @@ System.register("main", ["angular2/core", "angular2/platform/browser", "dashboar
       bootstrap(Main);
     }
   };
-});
+}); 
