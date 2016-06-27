@@ -7,8 +7,22 @@
 	<script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
 	<script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
 	<script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+	
+	<script src="../node_modules/systemjs/dist/system.js"></script>
+	
+	<script>
+      System.config({
+        defaultJSExtensions: true,
+        globalEvaluationScope: false,
+        map: {
+          'spec' : 'test/specs'
+        }
+      });
 
-	<script src="test/specs/chart.spec.js"></script>
+	System.import('spec/main.spec')
+	.then(window.onload)
+	.catch(console.error.bind(console));
+    </script>
 </head>
 <body>
 </body>

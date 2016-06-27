@@ -1,7 +1,7 @@
 
-import { Hero } from '../../src/charts/hero.interface';
+import { Dashboard } from '../../src/dashboard/dashboard';
 
-describe('Hero', () => {
+describe('Dashboard', () => {
 	it('has name', () => {
 		let hero: Hero = { id: 1, name: 'Super Cat' };
 		expect(hero.name).toEqual('Super Cat');
