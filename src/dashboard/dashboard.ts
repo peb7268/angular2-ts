@@ -9,6 +9,8 @@ import { Component } from 'angular2/core';
 export class Dashboard {
 
   ngOnInit(){
+    //http://marketpa3pne.intengoresearch.com/dashboard/chart
+    debugger;
     var data = {
       // A labels array that can contain any sort of values
       labels: ['Q1', 'Q2', 'Q3', 'Q4'],

@@ -22,6 +22,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function Dashboard() {
                 }
                 Dashboard.prototype.ngOnInit = function () {
+                    //http://marketpa3pne.intengoresearch.com/dashboard/chart
+                    debugger;
                     var data = {
                         // A labels array that can contain any sort of values
                         labels: ['Q1', 'Q2', 'Q3', 'Q4'],
