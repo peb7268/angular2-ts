@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'charts/chart'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,56 +10,47 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, http_1, chart_1;
     var Dashboard;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (chart_1_1) {
+                chart_1 = chart_1_1;
             }],
         execute: function() {
             Dashboard = (function () {
-                function Dashboard() {
+                function Dashboard(http) {
+                    this.test = 'Parent';
+                    console.log('Dashboard');
+                    this.http = http;
                 }
                 Dashboard.prototype.ngOnInit = function () {
-                    //http://marketpa3pne.intengoresearch.com/dashboard/chart
-                    debugger;
-                    var data = {
-                        // A labels array that can contain any sort of values
-                        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-                        // Our series array that contains series objects or in this case series data arrays
-                        series: [
-                            [800000, 1200000, 1400000, 1300000],
-                            [200000, 400000, 500000, 300000],
-                            [100000, 200000, 400000, 600000]
-                        ]
-                    };
-                    var options = {
-                        stackBars: true,
-                        axisY: {
-                            labelInterpolationFnc: function (value) {
-                                return (value / 1000) + 'k';
-                            }
-                        }
-                    };
-                    // Create a new line chart object where as first parameter we pass in a selector
-                    // that is resolving to our chart container element. The Second parameter
-                    // is the actual data object.
-                    var chart = new Chartist.Bar('.ct-chart', data, options);
-                    chart.on('draw', function (data) {
-                        if (data.type === 'bar') {
-                            data.element.attr({
-                                style: 'stroke-width: 30px'
-                            });
-                        }
+                    var _this = this;
+                    this.http.get('http://marketpa3pne.intengoresearch.com/dashboard/chart').subscribe(function (resp) {
+                        _this.data = resp.json();
+                        console.log('dash data done');
                     });
+                };
+                Dashboard.prototype.dataLoaded = function (evt) {
+                    console.log('data loaded in dashboard: ', this.data, evt);
                 };
                 Dashboard = __decorate([
                     core_1.Component({
                         selector: 'dashboard',
+                        providers: [http_1.HTTP_PROVIDERS],
+                        output: ['data']
+                    }),
+                    core_1.View({
+                        directives: [chart_1.Chart],
                         templateUrl: 'dashboard/dashboard.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], Dashboard);
                 return Dashboard;
             }());

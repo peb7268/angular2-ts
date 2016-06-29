@@ -21,15 +21,13 @@
 
     <script>
       System.config({
-        defaultJSExtensions: true,
-        map: {
-          //'dashboard' : 'dashboard/dashboard'
-        }
+        defaultJSExtensions: true
       });
     </script>
 
-    <script src="../lib/angular2.js"></script>
+    <script src="../../node_modules/angular2/bundles/angular2.js"></script>
     <script src="../lib/Rx.js"></script>
+    <script src="../../node_modules/angular2/bundles/http.dev.js"></script>
 
     <script>
       System.import('main').catch(console.log.bind(console));
