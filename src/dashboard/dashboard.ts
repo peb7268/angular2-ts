@@ -1,7 +1,11 @@
 
 import { Component, View } from 'angular2/core';
+import { bootstrap } from 'angular2/platform/browser';
+
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import { Chart } from 'charts/chart';
+
+//TODO: Make this the main component - aka remove the main componenet and have this as the top level component.
 
 @Component({
   selector: 'dashboard',
@@ -34,3 +38,4 @@ export class Dashboard {
   }
 }
 
+bootstrap(Dashboard);

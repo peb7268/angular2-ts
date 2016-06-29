@@ -18,6 +18,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
+            //TODO: Explore passing data into this compoonent from dashboard because I still dont think it's 100% right.
             Chart = (function () {
                 function Chart() {
                 }
@@ -30,7 +31,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     if (resp.length == 0)
                         return;
                     var resp = JSON.parse(resp);
-                    debugger;
+                    //TODO: Calculate Net Attraction and plot it in series
+                    //TODO: Calculate Axis and plot it in labels
                     //Aggregate and sort Chart Data
                     var data = {};
                     data.labes = ['Q1', 'Q2', 'Q3', 'Q4'];

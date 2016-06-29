@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'charts/chart'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/platform/browser', 'angular2/http', 'charts/chart'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core', 'angular2/http', 'charts/chart'], function(exp
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, chart_1;
+    var core_1, browser_1, http_1, chart_1;
     var Dashboard;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (browser_1_1) {
+                browser_1 = browser_1_1;
             },
             function (http_1_1) {
                 http_1 = http_1_1;
@@ -24,6 +27,7 @@ System.register(['angular2/core', 'angular2/http', 'charts/chart'], function(exp
                 chart_1 = chart_1_1;
             }],
         execute: function() {
+            //TODO: Make this the main component - aka remove the main componenet and have this as the top level component.
             Dashboard = (function () {
                 function Dashboard(http) {
                     this.test = 'Parent';
@@ -55,6 +59,7 @@ System.register(['angular2/core', 'angular2/http', 'charts/chart'], function(exp
                 return Dashboard;
             }());
             exports_1("Dashboard", Dashboard);
+            browser_1.bootstrap(Dashboard);
         }
     }
 });

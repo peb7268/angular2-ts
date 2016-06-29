@@ -1,6 +1,8 @@
 
 import { Component, View, Input } from 'angular2/core';
 
+//TODO: Explore passing data into this compoonent from dashboard because I still dont think it's 100% right.
+
 @Component({
   selector: 'chart',
   //templateUrl: 'dashboard/dashboard.html',
@@ -27,8 +29,10 @@ export class Chart {
   composeBarChart(resp){
     if(resp.length == 0) return;
     var resp    = JSON.parse(resp);
-    debugger;
 
+    //TODO: Calculate Net Attraction and plot it in series
+    //TODO: Calculate Axis and plot it in labels
+    
     //Aggregate and sort Chart Data
     var data    = {};
     data.labes  = ['Q1', 'Q2', 'Q3', 'Q4'];
