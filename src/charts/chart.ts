@@ -13,6 +13,8 @@ import { Component, View, Input } from 'angular2/core';
   template: "\n  <div class='ct-chart ct-perfect-fourth'></div> \n "
 })
 
+//TODO: Figure out how to pass the data better using an observable and an event emitter
+
 export class Chart {
   public chartType: String;
   @Input() data: Object;
@@ -32,7 +34,7 @@ export class Chart {
 
     //TODO: Calculate Net Attraction and plot it in series
     //TODO: Calculate Axis and plot it in labels
-    
+
     //Aggregate and sort Chart Data
     var data    = {};
     data.labes  = ['Q1', 'Q2', 'Q3', 'Q4'];
